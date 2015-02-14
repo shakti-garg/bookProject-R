@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\n\nshinyUI(\n  pageWithSidebar(\n    headerPanel(\"Meluha Synopsis: Har Har Mahadev!!\", windowTitle = \"Meluha Synopsis!\"),\n    \n    sidebarPanel(\n      helpText(div(HTML(\"<u>Filter Panel:</u>\"))),\n      uiOutput(\"bookFilter\"),\n      \n      br(),\n      \n      uiOutput(\"chapterFilter\"),\n      \n      br(),\n      \n      helpText(div(HTML(\"<u>Information:</u>\"))),\n      conditionalPanel(condition = \"input.tabName == 'Character Appearances'\",\n                       helpText(div(HTML(\"This visualization shows mentions of the main characters throughout the book. It was inspired by Jeff Clark's <a href=\\\"http://neoformix.com/2013/NovelViews.html\\\" target=\\\"_blank\\\">Novel Views</a>.\")))),\n      conditionalPanel(condition = \"input.tabName == 'Character Sentiments'\",\n                       helpText(div(HTML(\"This visualization shows sentiments of the main characters throughout the book. It was inspired by Jeff Clark's <a href=\\\"http://neoformix.com/2013/NovelViews.html\\\" target=\\\"_blank\\\">Novel Views</a>.\")))),\n      conditionalPanel(condition = \"input.tabName == 'Character Co-Occurrences'\",\n                       helpText(div(HTML(\"This visualization shows when the main characters are mentioned in the same chapter together. It was inspired by Mike Bostock's <a href=\\\"http://bost.ocks.org/mike/miserables/\\\" target=\\\"_blank\\\">Co-occurrence</a>.\"))))\n    ),\n      \n    mainPanel(\n        tabsetPanel(id=\"tabName\", type = \"tabs\", \n          tabPanel(\"Character Appearances\", plotOutput(\"appearancePlot\", height=\"100%\")), \n          tabPanel(\"Character Sentiments\", plotOutput(\"sentimentPlot\", height=\"100%\")),\n          tabPanel(\"Character Co-Occurrences\", plotOutput(\"cooccurrencePlot\", height=\"100%\"))\n      )\n    )\n  )\n)",
+    "created" : 1422255829264.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1404678917",
+    "id" : "561B3B8F",
+    "lastKnownWriteTime" : 1422721626,
+    "path" : "F:/R-Workspace/book/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
